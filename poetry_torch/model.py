@@ -20,9 +20,11 @@ class ModelWrapper:
         inputs = self.tokenizer(sample, return_tensors="pt")
 
         with torch.no_grad():
-            logits = self.model(**inputs).logits
+            outputs = self.model(**inputs)
+            logits = outputs.logits
+            probs = torch.softmax(logits, dim=1)
+            predicted_class_id = probs.argmax().item()
 
-        predicted_class_id = logits.argmax().item()
         return predicted_class_id
 
 #        result = self.model.config.id2label[predicted_class_id]
