@@ -11,6 +11,9 @@ def test_inference():
     sample = "That dog is cute."
     result = model.run_inference(sample)
     assert result == 1
+    sample = "That makes me sick."
+    result = model.run_inference(sample)
+    assert result == 0
 
 
 def main():
