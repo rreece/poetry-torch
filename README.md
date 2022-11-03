@@ -11,6 +11,13 @@ poetry install
 ```
 
 
+## Run sentiment scoring of your input texts
+
+cd tests
+python test_hf_bert_sentiment.py
+
+
+
 ## How this was created
 
 ```
