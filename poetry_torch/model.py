@@ -17,7 +17,7 @@ class ModelWrapper:
         self.model = BertForSequenceClassification.from_pretrained("textattack/bert-base-uncased-yelp-polarity")
 
     def run_inference(self, sample):
-        inputs = self.tokenizer("Hello, my dog is cute", return_tensors="pt")
+        inputs = self.tokenizer(sample, return_tensors="pt")
 
         with torch.no_grad():
             logits = self.model(**inputs).logits

@@ -11,7 +11,7 @@ poetry install
 ```
 
 
-## How thist was created
+## How this was created
 
 ```
 poetry new poetry-torch
