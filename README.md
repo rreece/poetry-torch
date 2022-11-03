@@ -1,6 +1,7 @@
 # poetry-torch
 
-An example of setting up a python virtualenv that has pytorch installed.
+An example of using poetry to setup a python virtualenv that has pytorch
+installed.
 
 
 ## How to setup
