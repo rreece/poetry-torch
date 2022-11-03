@@ -23,5 +23,7 @@ class ModelWrapper:
             logits = self.model(**inputs).logits
 
         predicted_class_id = logits.argmax().item()
-        result = self.model.config.id2label[predicted_class_id]
-        return result
+        return predicted_class_id
+
+#        result = self.model.config.id2label[predicted_class_id]
+#        return result
