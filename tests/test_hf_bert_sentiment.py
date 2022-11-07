@@ -21,17 +21,16 @@ def main():
     
     print("Give a sample of text to score its sentiment.")
     
-    done = False
-    while not done:
+    while True:
         print("")
         sample = input("> ").strip()
+        if sample.lower() == "q":
+            break
+
         result = model.run_inference(sample)
         print(result)
     
-        print("")
-        choice = input("Are you done? [y/n] > ").strip().lower()
-        done = choice == "y"
-    
+    print("")
     print("Done.")
 
 
