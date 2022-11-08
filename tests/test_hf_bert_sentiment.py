@@ -19,7 +19,7 @@ def test_inference():
 def main():
     model = ModelWrapper()
     
-    print("Give a sample of text to score its sentiment.")
+    print("Give a sample of text to score its sentiment. (q to quit)")
     
     while True:
         print("")
