@@ -6,8 +6,16 @@ installed.
 
 ## How to setup
 
+First time running, install by
+
 ```
 poetry install
+```
+
+Then start the environment by
+
+```
+poetry shell
 ```
 
 

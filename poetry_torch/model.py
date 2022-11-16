@@ -13,8 +13,10 @@ from transformers import BertTokenizer, BertForSequenceClassification
 class ModelWrapper:
 
     def __init__(self):
-        self.tokenizer = BertTokenizer.from_pretrained("textattack/bert-base-uncased-yelp-polarity")
-        self.model = BertForSequenceClassification.from_pretrained("textattack/bert-base-uncased-yelp-polarity")
+#        model_name = "textattack/bert-base-uncased-yelp-polarity"
+        model_name = "textattack/bert-base-uncased-SST-2"
+        self.tokenizer = BertTokenizer.from_pretrained(model_name)
+        self.model = BertForSequenceClassification.from_pretrained(model_name)
 
     def run_inference(self, sample):
         inputs = self.tokenizer(sample, return_tensors="pt")

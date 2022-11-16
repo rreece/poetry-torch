@@ -41,7 +41,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "exceptiongroup"
-version = "1.0.1"
+version = "1.0.4"
 description = "Backport of PEP 654 (exception groups)"
 category = "main"
 optional = false
@@ -64,7 +64,7 @@ testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pyt
 
 [[package]]
 name = "huggingface-hub"
-version = "0.10.1"
+version = "0.11.0"
 description = "Client library to download and publish models, datasets and other repos on the huggingface.co hub"
 category = "main"
 optional = false
@@ -79,14 +79,15 @@ tqdm = "*"
 typing-extensions = ">=3.7.4.3"
 
 [package.extras]
-all = ["InquirerPy (==0.3.4)", "Jinja2", "black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "jedi", "mypy", "pytest", "pytest-cov", "soundfile"]
+all = ["InquirerPy (==0.3.4)", "Jinja2", "black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "jedi", "mypy (==0.982)", "pytest", "pytest-cov", "pytest-env", "soundfile", "types-PyYAML", "types-requests", "types-simplejson", "types-toml", "types-tqdm", "types-urllib3"]
 cli = ["InquirerPy (==0.3.4)"]
-dev = ["InquirerPy (==0.3.4)", "Jinja2", "black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "jedi", "mypy", "pytest", "pytest-cov", "soundfile"]
+dev = ["InquirerPy (==0.3.4)", "Jinja2", "black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "jedi", "mypy (==0.982)", "pytest", "pytest-cov", "pytest-env", "soundfile", "types-PyYAML", "types-requests", "types-simplejson", "types-toml", "types-tqdm", "types-urllib3"]
 fastai = ["fastai (>=2.4)", "fastcore (>=1.3.27)", "toml"]
-quality = ["black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "mypy"]
+quality = ["black (==22.3)", "flake8 (>=3.8.3)", "flake8-bugbear", "isort (>=5.5.4)", "mypy (==0.982)"]
 tensorflow = ["graphviz", "pydot", "tensorflow"]
-testing = ["InquirerPy (==0.3.4)", "Jinja2", "isort (>=5.5.4)", "jedi", "pytest", "pytest-cov", "soundfile"]
+testing = ["InquirerPy (==0.3.4)", "Jinja2", "isort (>=5.5.4)", "jedi", "pytest", "pytest-cov", "pytest-env", "soundfile"]
 torch = ["torch"]
+typing = ["types-PyYAML", "types-requests", "types-simplejson", "types-toml", "types-tqdm", "types-urllib3"]
 
 [[package]]
 name = "idna"
@@ -401,7 +402,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "wheel"
-version = "0.38.2"
+version = "0.38.4"
 description = "A built-package format for Python"
 category = "main"
 optional = false
@@ -433,16 +434,16 @@ colorama = [
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
 ]
 exceptiongroup = [
-    {file = "exceptiongroup-1.0.1-py3-none-any.whl", hash = "sha256:4d6c0aa6dd825810941c792f53d7b8d71da26f5e5f84f20f9508e8f2d33b140a"},
-    {file = "exceptiongroup-1.0.1.tar.gz", hash = "sha256:73866f7f842ede6cb1daa42c4af078e2035e5f7607f0e2c762cc51bb31bbe7b2"},
+    {file = "exceptiongroup-1.0.4-py3-none-any.whl", hash = "sha256:542adf9dea4055530d6e1279602fa5cb11dab2395fa650b8674eaec35fc4a828"},
+    {file = "exceptiongroup-1.0.4.tar.gz", hash = "sha256:bd14967b79cd9bdb54d97323216f8fdf533e278df937aa2a90089e7d6e06e5ec"},
 ]
 filelock = [
     {file = "filelock-3.8.0-py3-none-any.whl", hash = "sha256:617eb4e5eedc82fc5f47b6d61e4d11cb837c56cb4544e39081099fa17ad109d4"},
     {file = "filelock-3.8.0.tar.gz", hash = "sha256:55447caa666f2198c5b6b13a26d2084d26fa5b115c00d065664b2124680c4edc"},
 ]
 huggingface-hub = [
-    {file = "huggingface_hub-0.10.1-py3-none-any.whl", hash = "sha256:dc3b0e9a663fe6cad6a8522055c02a9d8673dbd527223288e2442bc028c253db"},
-    {file = "huggingface_hub-0.10.1.tar.gz", hash = "sha256:5c188d5b16bec4b78449f8681f9975ff9d321c16046cc29bcf0d7e464ff29276"},
+    {file = "huggingface_hub-0.11.0-py3-none-any.whl", hash = "sha256:1f540c6d57cb1684d3578d7bf2d35041a5145b17e8af932505db7f4fbcc7640d"},
+    {file = "huggingface_hub-0.11.0.tar.gz", hash = "sha256:b48860d791502c2b8a0e6c841214df19c67999198a75d1417512b45752508ac6"},
 ]
 idna = [
     {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
@@ -737,6 +738,6 @@ urllib3 = [
     {file = "urllib3-1.26.12.tar.gz", hash = "sha256:3fa96cf423e6987997fc326ae8df396db2a8b7c667747d47ddd8ecba91f4a74e"},
 ]
 wheel = [
-    {file = "wheel-0.38.2-py3-none-any.whl", hash = "sha256:7a5a3095dceca97a3cac869b8fef4e89b83fafde21b6688f47b6fda7600eb441"},
-    {file = "wheel-0.38.2.tar.gz", hash = "sha256:3d492ef22379a156ec923d2a77051cedfd4df4b667864e9e41ba83f0b70b7149"},
+    {file = "wheel-0.38.4-py3-none-any.whl", hash = "sha256:b60533f3f5d530e971d6737ca6d58681ee434818fab630c83a734bb10c083ce8"},
+    {file = "wheel-0.38.4.tar.gz", hash = "sha256:965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"},
 ]
