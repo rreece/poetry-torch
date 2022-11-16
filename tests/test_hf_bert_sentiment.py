@@ -3,7 +3,7 @@ Test Huggingface pretrained BERT.
 """
 
 
-from poetry_torch.model import ModelWrapper
+from poetry_torch.bert import BertHandler
 
 
 def test_inference():
@@ -17,7 +17,7 @@ def test_inference():
 
 
 def main():
-    model = ModelWrapper()
+    model = BertHandler()
     
     print("Give a sample of text to score its sentiment. (q to quit)")
     
