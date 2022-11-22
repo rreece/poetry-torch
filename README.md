@@ -3,6 +3,9 @@
 An example of using poetry to setup a python virtualenv that has pytorch
 installed.
 
+This package also shows examples of loading and using HuggingFace
+models. So far, all the models used are for NLP.
+
 
 ## How to setup
 
