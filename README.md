@@ -37,3 +37,14 @@ poetry add torch --platform linux --python "^3.8"
 poetry add transformers
 poetry add pytest
 ```
+
+
+## Run the tests
+
+Just call
+
+```
+pytest
+```
+
+There are some warnings we should work on, but everything should pass.
