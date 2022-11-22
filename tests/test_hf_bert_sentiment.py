@@ -7,7 +7,7 @@ from poetry_torch.models.bert import BertHandler
 
 
 def test_inference():
-    model = ModelWrapper()
+    model = BertHandler()
     sample = "That dog is cute."
     result = model.run_inference(sample)
     assert result == 1

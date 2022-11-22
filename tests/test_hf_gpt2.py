@@ -7,13 +7,11 @@ from poetry_torch.models.gpt2 import GPT2Handler
 
 
 def test_inference():
-    model = ModelWrapper()
+    model = GPT2Handler()
     sample = "That dog is cute."
     result = model.run_inference(sample)
-    assert result == 1
-    sample = "That makes me sick."
-    result = model.run_inference(sample)
-    assert result == 0
+    generated_text = result[0]["generated_text"]
+    assert len(generated_text) > 25
 
 
 def main():
