@@ -14,7 +14,7 @@ class GPT2Handler:
     def __init__(self, model_name=None):
         if model_name is None:
             self.model_name = "gpt2"
-        self.max_length = 60
+        self.max_length = 240
         self.num_return_sequences = 1
         self.generator = pipeline("text-generation", model=self.model_name)
 
