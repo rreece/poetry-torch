@@ -3,7 +3,7 @@ Test Huggingface pretrained t5.
 """
 
 
-from poetry_torch.models.t5 import T5Handler
+from hf_wrappers.models.t5 import T5Handler
 
 
 def test_inference():

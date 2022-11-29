@@ -1,9 +1,9 @@
 """
-Test Huggingface pretrained BERT.
+Test Huggingface pretrained GPT-2.
 """
 
 
-from poetry_torch.models.gpt2 import GPT2Handler
+from hf_wrappers.models.gpt2 import GPT2Handler
 
 
 def test_inference():

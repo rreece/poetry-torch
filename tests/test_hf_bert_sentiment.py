@@ -3,7 +3,7 @@ Test Huggingface pretrained BERT.
 """
 
 
-from poetry_torch.models.bert import BertHandler
+from hf_wrappers.models.bert import BertHandler
 
 
 def test_inference():
