@@ -50,5 +50,3 @@ Just call
 ```
 pytest
 ```
-
-There are some warnings we should work on, but everything should pass.

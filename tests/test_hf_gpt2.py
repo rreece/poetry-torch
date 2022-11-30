@@ -10,8 +10,7 @@ def test_inference():
     model = GPT2Handler()
     sample = "That dog is cute."
     result = model.run_inference(sample)
-    generated_text = result[0]["generated_text"]
-    assert len(generated_text) > 25
+    assert len(result) > 25
 
 
 def main():
@@ -26,8 +25,7 @@ def main():
             break
 
         result = model.run_inference(sample)
-        generated_text = result[0]["generated_text"]
-        print(generated_text)
+        print(result)
 
     print("")
     print("Done.")
