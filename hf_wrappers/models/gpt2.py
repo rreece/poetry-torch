@@ -15,28 +15,34 @@ class GPT2Handler:
 
     def __init__(self, model_name=None):
         if model_name is None:
-            self.model_name = "gpt2"
+            self.model_name = "gpt2-large"
         self.tokenizer = GPT2Tokenizer.from_pretrained(self.model_name)
         self.model = GPT2LMHeadModel.from_pretrained(self.model_name,
                         pad_token_id=self.tokenizer.eos_token_id)
-        self.max_length = 240
+        self.max_new_tokens = 90
 
         self.device = None
         if torch.cuda.is_available():
             self.device = torch.device("cuda")
             self.model.to(self.device)
 
+        self.model.eval()
+
     def run_inference(self, sample):
         inputs = self.tokenizer([sample], return_tensors="pt")
 
         if self.device is not None:
-            inputs.to(self.device)
+            inputs = inputs.to(self.device)
 
         with torch.no_grad():
             outputs = self.model.generate(**inputs,
                     return_dict_in_generate=True,
                     output_scores=True,
-                    max_length=self.max_length)
+                    max_new_tokens=self.max_new_tokens,
+                    do_sample=True,
+                    temperature=0.7,
+                    repetition_penalty=1.3,
+                    )
             sequences = outputs.sequences
             result = self.tokenizer.decode(sequences[0], skip_special_tokens=True)
             return result
