@@ -6,6 +6,7 @@ https://huggingface.co/docs/transformers/model_doc/bert#transformers.BertForSequ
 """
 
 
+import os
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
@@ -38,3 +39,12 @@ class BertHandler:
             probs = torch.softmax(logits, dim=1)
             predicted_class_id = probs.argmax().item()
             return predicted_class_id
+
+    def save_checkpoint(self, output_dir):
+        output_model_file = os.path.join(output_dir, "pytorch_model.bin")
+        output_config_file = os.path.join(output_dir, "config.json")
+        output_vocab_file = os.path.join(output_dir, "vocab.txt")
+        os.makedirs(output_dir)
+        torch.save(self.model.state_dict(), output_model_file)
+        self.model.config.to_json_file(output_config_file)
+        self.tokenizer.save_vocabulary(output_dir)
