@@ -41,6 +41,7 @@ class BertHandler:
             return predicted_class_id
 
     def save_checkpoint(self, output_dir):
+        """
         output_model_file = os.path.join(output_dir, "pytorch_model.bin")
         output_config_file = os.path.join(output_dir, "config.json")
         output_vocab_file = os.path.join(output_dir, "vocab.txt")
@@ -48,3 +49,9 @@ class BertHandler:
         torch.save(self.model.state_dict(), output_model_file)
         self.model.config.to_json_file(output_config_file)
         self.tokenizer.save_vocabulary(output_dir)
+
+        See:
+        https://huggingface.co/transformers/v1.2.0/serialization.html#serialization-best-practices
+        """
+        self.model.save_pretrained(output_dir)
+        self.tokenizer.save_pretrained(output_dir)

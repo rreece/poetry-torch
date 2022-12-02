@@ -19,11 +19,7 @@ def test_inference():
     assert result == 0
 
 
-def test_save_model():
-    """
-    See:
-    https://huggingface.co/transformers/v1.2.0/serialization.html#serialization-best-practices
-    """
+def test_save_checkpoint():
     mh = BertHandler()
     mh.save_checkpoint(mh.model_name)
 
@@ -57,4 +53,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-#    test_save_model()
