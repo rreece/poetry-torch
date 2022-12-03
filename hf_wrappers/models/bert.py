@@ -6,26 +6,23 @@ https://huggingface.co/docs/transformers/model_doc/bert#transformers.BertForSequ
 """
 
 
-import os
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
+from hf_wrappers.models.handler import BaseHandler
 
-class BertHandler:
+
+class BertHandler(BaseHandler):
 
     def __init__(self, model_name=None):
         if model_name is None:
-#            self.model_name = "textattack/bert-base-uncased-yelp-polarity"
-            self.model_name = "textattack/bert-base-uncased-SST-2"
+            model_name = "textattack/bert-base-uncased-SST-2"
+        super().__init__(model_name=model_name)
+
+    def setup_model(self, model_name=None):
+        self.model_name = model_name
         self.tokenizer = BertTokenizer.from_pretrained(self.model_name)
         self.model = BertForSequenceClassification.from_pretrained(self.model_name)
-
-        self.device = None
-        if torch.cuda.is_available():
-            self.device = torch.device("cuda")
-            self.model.to(self.device)
-
-        self.model.eval()
 
     def run_inference(self, sample):
         inputs = self.tokenizer(sample, return_tensors="pt")
@@ -39,19 +36,3 @@ class BertHandler:
             probs = torch.softmax(logits, dim=1)
             predicted_class_id = probs.argmax().item()
             return predicted_class_id
-
-    def save_checkpoint(self, output_dir):
-        """
-        output_model_file = os.path.join(output_dir, "pytorch_model.bin")
-        output_config_file = os.path.join(output_dir, "config.json")
-        output_vocab_file = os.path.join(output_dir, "vocab.txt")
-        os.makedirs(output_dir)
-        torch.save(self.model.state_dict(), output_model_file)
-        self.model.config.to_json_file(output_config_file)
-        self.tokenizer.save_vocabulary(output_dir)
-
-        See:
-        https://huggingface.co/transformers/v1.2.0/serialization.html#serialization-best-practices
-        """
-        self.model.save_pretrained(output_dir)
-        self.tokenizer.save_pretrained(output_dir)
