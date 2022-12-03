@@ -6,6 +6,9 @@ installed.
 This package also shows examples of loading and using HuggingFace
 models. So far, all the models used are for NLP.
 
+An analogous project using plain virtualenv instead of poetry is
+[venv-torch](https://github.com/rreece/venv-torch).
+
 
 ## How to setup
 
@@ -44,8 +47,6 @@ poetry add pytest
 
 
 ## Run the tests
-
-Just call
 
 ```
 pytest
