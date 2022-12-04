@@ -35,6 +35,13 @@ python test_hf_bert_sentiment.py
 ```
 
 
+## Run the tests
+
+```
+pytest
+```
+
+
 ## How this was created
 
 ```
@@ -45,11 +52,4 @@ poetry add torch --platform linux --python "^3.8"
 poetry add transformers
 poetry add sentencepiece
 poetry add pytest
-```
-
-
-## Run the tests
-
-```
-pytest
 ```
