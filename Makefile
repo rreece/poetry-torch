@@ -1,5 +1,6 @@
 
 all: .venv
+	@echo "\nTo start, please run\npoetry shell"
 
 .venv:
 	poetry install
