@@ -1,5 +1,7 @@
 
-all:
+all: .venv
+
+.venv:
 	poetry install
 
 clean:
