@@ -1,5 +1,7 @@
 # poetry-torch
 
+[![CI badge](https://github.com/rreece/poetry-torch/actions/workflows/python-poetry-app.yml/badge.svg)](https://github.com/rreece/poetry-torch/actions)
+
 An example of using poetry to setup a python virtualenv that has pytorch
 installed.
 
