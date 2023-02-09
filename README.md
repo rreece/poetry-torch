@@ -53,3 +53,9 @@ poetry add transformers
 poetry add sentencepiece
 poetry add pytest
 ```
+
+
+## Author
+
+Ryan Reece ([@rreece](https://github.com/rreece))         
+Created: November 2, 2022
