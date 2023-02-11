@@ -29,6 +29,8 @@ poetry shell
 
 ## Run sentiment scoring of your input texts
 
+This test can be run interactively:
+
 ```
 cd tests
 python test_hf_bert_sentiment.py
@@ -36,6 +38,8 @@ python test_hf_bert_sentiment.py
 
 
 ## Run the tests
+
+Run all the tests:
 
 ```
 pytest
@@ -53,6 +57,8 @@ poetry add torch --platform linux --python "^3.8"
 poetry add transformers
 poetry add sentencepiece
 poetry add pytest
+poetry install
+poetry lock
 ```
 
 
