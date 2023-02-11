@@ -18,7 +18,7 @@ realclean: clean
 	poetry env remove --all
 
 test:
-	pytest
+	cd tests && pytest && cd ..
 
 testclean:
 	find . -type d -name .pytest_cache -exec rm -rfv {} +
