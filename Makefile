@@ -5,7 +5,7 @@ VENV_NAME := ".venv"
 .PHONY: all clean realclean test testclean lock lockclean
 
 all: $(VENV_NAME)
-	@echo "\nTo start, please run\npoetry shell"
+	@echo "\nTo start, please run\npoetry shell\n"
 
 $(VENV_NAME):
 	poetry install
