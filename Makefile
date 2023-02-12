@@ -21,6 +21,8 @@ test:
 	cd tests && pytest && cd ..
 
 testclean:
+	find tests -type f -name '*.py[co]' -exec rm -fv {} +
+	find tests -type d -name __pycache__  -exec rm -rfv {} +
 	find tests -type d -name .pytest_cache -exec rm -rfv {} +
 
 lock:
