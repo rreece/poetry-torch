@@ -11,8 +11,8 @@ $(VENV_NAME):
 	poetry install
 
 clean: testclean
-	find . -type f -name '*.py[co]' -exec rm -fv {} +
-	find . -type d -name __pycache__  -exec rm -rfv {} +
+	find python -type f -name '*.py[co]' -exec rm -fv {} +
+	find python -type d -name __pycache__  -exec rm -rfv {} +
 
 realclean: clean
 	poetry env remove --all
