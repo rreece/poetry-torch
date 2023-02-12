@@ -21,7 +21,7 @@ test:
 	cd tests && pytest && cd ..
 
 testclean:
-	find . -type d -name .pytest_cache -exec rm -rfv {} +
+	find tests -type d -name .pytest_cache -exec rm -rfv {} +
 
 lock:
 	poetry lock
