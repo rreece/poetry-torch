@@ -51,7 +51,9 @@ pytest
 ```
 poetry new poetry-torch
 cd poetry-torch
-cp ~/poetry.toml .
+poetry config virtualenvs.create true
+poetry config virtualenvs.in-project true
+poetry config virtualenvs.path ".venv"
 poetry add numpy
 poetry add torch --platform linux --python "^3.8"
 poetry add transformers
