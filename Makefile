@@ -34,4 +34,4 @@ lockclean:
 	find . -maxdepth 1 -type f -name poetry.lock -exec rm -fv {} +
 
 lint:
-	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	flake8 python tests --count --select=E9,F63,F7,F82 --show-source --statistics
