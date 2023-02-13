@@ -2,7 +2,7 @@
 
 VENV_NAME := .venv
 
-.PHONY: all clean realclean test testclean lock lockclean
+.PHONY: all clean realclean test testclean lock lockclean lint
 
 all: $(VENV_NAME)
 	@echo "\nTo start, please run\npoetry shell\n"
@@ -30,3 +30,6 @@ lock:
 
 lockclean:
 	find . -maxdepth 1 -type f -name poetry.lock -exec rm -fv {} +
+
+lint:
+	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
